@@ -4,4 +4,11 @@ body{
 	text-align: center;
 	font-size: 30px;
 	font-family:monospace;
+    position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.slide{
+    display: none;
 }
