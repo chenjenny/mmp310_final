@@ -1,7 +1,30 @@
-body{
-	background-color: cadetblue;
-	color: white;
-	text-align: center;
-	font-size: 30px;
-	font-family:monospace;
+body {
+	background-color: ghostwhite;
+	margin: 0 auto;
+	color: black;
 }
+
+/* navbar */
+
+.navbar {
+	background-color: ;
+}
+
+
+#icon-desc {
+	font-size: 5rem;
+	padding-top: 2rem;
+}
+
+/* weather display*/
+#description {
+	font-size: 2rem;
+}
+
+#temperature {
+	font-size: 7rem;
+}
+
+#icon-thermometer {
+	font-size: 4rem;
+
