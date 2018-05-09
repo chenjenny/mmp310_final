@@ -1,21 +1,60 @@
 /*
 ** Document Ready Event (Type All Code in There)
 */
-$(document).ready(function() {   
-    $(".submit").click(function(){
-		        	var city = $(".city").val()
-		        	//Make the API Call
-		        	$.getJSON("http://api.openweathermap.org/data/2.5/weather?id=5128638&APPID=0db405f4f4c3f54c4a45e42c5a0788a2",
-//                    $.getJSON("http://api.openweathermap.org/data/2.5/find?lat=40.7128&lon=74.0060&cnt=50&APPID=0db405f4f4c3f54c4a45e42c5a0788a2",
-				{
-					units:"imperial"
-				},
-				function(response){
-					console.log(response)
-					$(".country").html(response.sys.country)
-					$(".temp").html(response.main.temp);
-					$(".city-name").html(response.name);
-				    $(".weather").html(response.weather[0].description)
-				});
-	        })
+$(document).ready(function() {
+    
+    $(function(){
+        var apiKey = '27659eba6e7ec121ab63b30de42a931a';
+        var units = 'imperial';
+        var baseUrl = 'http://api.openweathermap.org/data/2.5/weather?APPID=' + apiKey 
+//        + units
+        ;
+        
+        $(".submit").click(function(e){
+            e.preventDefault();
+            
+            var cityValue = $('.city').val();
+            
+            var params = {
+                url: baseUrl +'&q=' + cityValue,
+                method: 'GET'
+            };
+            
+            $.ajax(params).done(function(response){
+                // Show card
+                $('.card').removeClass('d-none');
+                
+                // Error
+                $('#city').removeClass('is-invalid');
+                $('.invalid-feedback').slideUp();
+                $('.card').show();
+                
+                // Title
+                $('.card-title').text(response.name);
+                
+                // Description 
+                $('.description-weather').text(response.weather[0].description);
+                
+                // Temperature 
+                var temp = Math.round(response.main.temp)+ ' F';
+                var tempMax = Math.round(response.main.temp) + ' F';
+                var tempMin = Math.round(response.main.temp) + ' F'; 
+                
+                $('.temp-weather').text(temp);
+                $('.temp-max-weather').text(tempMax);
+                $('.temp-min-weather').text(tempMin);
+                
+                // Images 
+                var image = response.weather[0].icon;
+                $('.image-weather').attr('src', 'http://openweathermap.org/img/w/' + image + '.png');
+                $('.image-weather').attr('alt', response.name);
+            });
+//            .fail(function(){
+//                $('.invalide-feedback') .slideDown();
+//                $('#city') .addClass('is-valid');
+//                $('.card').hide();
+//                console.error('Error');
+//            });
+        });
+    });
 });

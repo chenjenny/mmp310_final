@@ -16,12 +16,21 @@
             -->
             <input class="city" type="text"> 
             <button class="submit">Submit</button>
-            <div id="startWidget">
-                <div class="city-name"></div>
+            <div class="invalid-feedback">Please enter a proper name</div>
+            <div id="startWidget" class="card d-none">
+                <div>
+                    <img class="image-weather" src="" alt="" width="50" height="50" />
+                </div>
+                <div class="city-name">
+                    <h2 class="card-title"></h2>
+                </div>
                 <div id="infoWidget">
-                    <div class="weather"></div>	
-                    <div class="temp"></div>	
-                    <div class="country"></div> 
+                    <p class="description-weather"></p>
+                    <p>
+                        <strong>Temperture :</strong><span class="temp-weather"></span><br />
+                        <strong>Max :</strong><span class="temp-max-weather"></span>
+                        <strong>Min :</strong><span class="temp-min-weather"></span>
+                    </p>
                 </div>
             </div>
         </div>
