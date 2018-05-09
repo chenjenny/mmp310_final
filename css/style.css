@@ -1,4 +1,40 @@
+<<<<<<< HEAD
 /*body{*/
+=======
+<<<<<<< HEAD
+body {
+	background-color: ghostwhite;
+	margin: 0 auto;
+	color: black;
+}
+
+/* navbar */
+
+.navbar {
+	background-color: ;
+}
+
+
+#icon-desc {
+	font-size: 5rem;
+	padding-top: 2rem;
+}
+
+/* weather display*/
+#description {
+	font-size: 2rem;
+}
+
+#temperature {
+	font-size: 7rem;
+}
+
+#icon-thermometer {
+	font-size: 4rem;
+
+=======
+body{
+>>>>>>> dd2e30843ede0dd80e2baa07bd62a532ca1c2ba6
 /*    background: #0a2239;*/
 /*    color: #fff;*/
 /*	text-align: center;*/
@@ -32,4 +68,9 @@
 /*    padding: 50px 0;*/
 /*    height: 210px;*/
     
+<<<<<<< HEAD
 /*}*/
+=======
+}
+>>>>>>> a8cab66d108486d97a06afc9b926ab0cd3fa188b
+>>>>>>> dd2e30843ede0dd80e2baa07bd62a532ca1c2ba6
