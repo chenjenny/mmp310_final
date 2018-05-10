@@ -84,6 +84,7 @@ window.onload = function () {
 /*
 ** Document Ready Event (Type All Code in There)
 */
+// Searched country, city, and zipcode
 $(document).ready(function() {
     
     $(function(){
@@ -91,8 +92,7 @@ $(document).ready(function() {
         var units = '&units=imperial';
         var baseUrl = 'http://api.openweathermap.org/data/2.5/weather?APPID=' + apiKey + units;
         
-        $(".submit").click(function(e){
-            e.preventDefault();
+        $(".submit").click(function(){
             
             var cityValue = $('.city').val();
             
@@ -101,6 +101,7 @@ $(document).ready(function() {
                 method: 'GET'
             };
             
+            // For country/city
             $.ajax(params).done(function(response){
                 // Show card
                 $('.card').show();
@@ -135,6 +136,9 @@ $(document).ready(function() {
                 var sunset = new Date(1000*response.sys.sunset);
                 $('.sys-sunset').text(sunset);
             });
+            
+            //For zip code
+            
         });
     });
 });
