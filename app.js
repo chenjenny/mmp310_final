@@ -90,10 +90,8 @@ $(document).ready(function() {
     
     $(function(){
         var apiKey = '27659eba6e7ec121ab63b30de42a931a';
-        var units = 'imperial';
-        var baseUrl = 'http://api.openweathermap.org/data/2.5/weather?APPID=' + apiKey 
-//        + units
-        ;
+        var units = '&units=imperial';
+        var baseUrl = 'http://api.openweathermap.org/data/2.5/weather?APPID=' + apiKey + units;
         
         $(".submit").click(function(e){
             e.preventDefault();
@@ -107,39 +105,94 @@ $(document).ready(function() {
             
             $.ajax(params).done(function(response){
                 // Show card
-                $('.card').removeClass('d-none');
-                
-                // Error
-                $('#city').removeClass('is-invalid');
-                $('.invalid-feedback').slideUp();
                 $('.card').show();
                 
                 // Title
                 $('.card-title').text(response.name);
                 
+                // Images 
+                var image = response.weather[0].icon;
+                $('.image-weather').attr('src', 'http://openweathermap.org/img/w/' + image + '.png');
+                $('.image-weather').attr('alt', response.name);
+                
                 // Description 
                 $('.description-weather').text(response.weather[0].description);
                 
                 // Temperature 
-                var temp = Math.round(response.main.temp)+ ' F';
-                var tempMax = Math.round(response.main.temp) + ' F';
-                var tempMin = Math.round(response.main.temp) + ' F'; 
+                var temp = Math.round(response.main.temp)+ ' °F';
+                var tempMax = Math.round(response.main.temp_max) + ' °F';
+                var tempMin = Math.round(response.main.temp_min) + ' °F'; 
                 
                 $('.temp-weather').text(temp);
                 $('.temp-max-weather').text(tempMax);
                 $('.temp-min-weather').text(tempMin);
                 
-                // Images 
-                var image = response.weather[0].icon;
-                $('.image-weather').attr('src', 'http://openweathermap.org/img/w/' + image + '.png');
-                $('.image-weather').attr('alt', response.name);
+                // Wind
+                var wind = Math.round(response.wind.speed)+ ' MPH';
+                $('.wind-speed').text(wind);
+                
+                // Sunrise and Sunset
+                var sunrise = new Date(1000*response.sys.sunrise);
+                $('.sys-sunrise').text(sunrise);
+                var sunset = new Date(1000*response.sys.sunset);
+                $('.sys-sunset').text(sunset);
             });
-//            .fail(function(){
-//                $('.invalide-feedback') .slideDown();
-//                $('#city') .addClass('is-valid');
-//                $('.card').hide();
-//                console.error('Error');
-//            });
         });
     });
 });
+function initMap() {
+    // Set Latitude and Longitude
+	var algeria = {
+		lat: 28.0339,
+		lng: 1.6596
+	};
+    var newYork = {
+		lat: 40.730610,
+		lng: -73.935242
+	};
+    var russia = {
+		lat: 62.40091936118402,
+		lng: 94.64788124999995
+	};
+    // Connect to HTML to show map
+	var map = new google.maps.Map(document.getElementById('map'), {
+		zoom: 2,
+		center: algeria
+	});
+	// Add marker
+	var markerOne = new google.maps.Marker({
+		position: algeria,
+		map: map,
+		title: "Algeria"
+	});
+    var markerTwo = new google.maps.Marker({
+		position: newYork,
+		map: map,
+		title: "New York"
+	});
+    var markerThree = new google.maps.Marker({
+		position: russia,
+		map: map,
+		title: "Russia"
+	});
+	// Clicked zoom to position centered
+	markerOne.addListener("click", function() {
+		map.setZoom(7);
+		map.setCenter(markerOne.getPosition());
+	});
+    markerTwo.addListener("click", function() {
+		map.setZoom(7);
+		map.setCenter(markerTwo.getPosition());
+	});
+    markerThree.addListener("click", function() {
+		map.setZoom(7);
+		map.setCenter(markerThree.getPosition());
+	});
+	// show lat & lng where clicked on map in console
+	map.addListener("click", function(event) {
+		console.log(event);
+		console.log(event.latLng.lat());
+		console.log(event.latLng.lng());
+	});
+	
+}

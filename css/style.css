@@ -27,4 +27,8 @@ body {
 
 #icon-thermometer {
 	font-size: 4rem;
-
+}
+#map {
+	height: 500px;
+	width: 100%;
+}
