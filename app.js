@@ -48,7 +48,6 @@ window.onload = function () {
 					//lat, lon coordinates of the location of your interest
 					//http://openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=b6907d289e10d714a6e88b30761fae22
 					`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&${appid}`;
-				
 			
 				// openweathermap api 
 				httpReqWeatherAsync(weatherApi);
@@ -70,8 +69,7 @@ window.onload = function () {
 				var icon = `<i class="wi wi-owm-${id}"></i>`
 				var temperature = jsonWeather.main.temp;
 				var findTemp = Math.round(1.8 * (temperature - 273) + 32)
-
-
+			
 				//display data
 				var description = document.getElementById("description");
 				description.innerHTML = `<i id="icon-desc" class="wi wi-owm-${dayNight}-${id}"></i><p>${weatherDesc}</p>`;
