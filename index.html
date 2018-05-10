@@ -40,11 +40,9 @@
 					</div>
 				</div>
 		</div>
-	</div>
-	<!-- javascript file -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="app.js"></script>
+    </div>
 
+<<<<<<< HEAD
 
 
 </body>
@@ -55,6 +53,8 @@
         <meta charset="utf-8" />
     </head>
     <body>
+=======
+>>>>>>> 1ae79c9de5f1033aeddf6cea4d16ed3732ccf02c
         <div id="container">
             <h1>MMP 310 FINAL 🤓</h1>
             <hr />
@@ -65,12 +65,21 @@
             -->
             <input class="city" type="text"> 
             <button class="submit">Submit</button>
-            <div id="startWidget">
-                <div class="city-name"></div>
+            <div class="invalid-feedback">Please enter a proper name</div>
+            <div id="startWidget" class="card d-none">
+                <div>
+                    <img class="image-weather" src="" alt="" width="50" height="50" />
+                </div>
+                <div class="city-name">
+                    <h2 class="card-title"></h2>
+                </div>
                 <div id="infoWidget">
-                    <div class="weather"></div>	
-                    <div class="temp"></div>	
-                    <div class="country"></div> 
+                    <p class="description-weather"></p>
+                    <p>
+                        <strong>Temperture :</strong><span class="temp-weather"></span><br />
+                        <strong>Max :</strong><span class="temp-max-weather"></span>
+                        <strong>Min :</strong><span class="temp-min-weather"></span>
+                    </p>
                 </div>
             </div>
         </div>
