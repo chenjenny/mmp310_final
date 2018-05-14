@@ -141,11 +141,6 @@ $(document).ready(function() {
         });
     });
 });
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
->>>>>>> 21e3907a5735de0d9d81736cd897317399909895
 var map;
   var geoJSON;
   var request;
@@ -293,66 +288,3 @@ var map;
     });
   };
   google.maps.event.addDomListener(window, 'load', initialize);
-<<<<<<< HEAD
-=======
-
-
-=======
-function initMap() {
-    // Set Latitude and Longitude
-	var algeria = {
-		lat: 28.0339,
-		lng: 1.6596
-	};
-    var newYork = {
-		lat: 40.730610,
-		lng: -73.935242
-	};
-    var russia = {
-		lat: 62.40091936118402,
-		lng: 94.64788124999995
-	};
-    // Connect to HTML to show map
-	var map = new google.maps.Map(document.getElementById('map'), {
-		zoom: 2,
-		center: algeria
-	});
-	// Add marker
-	var markerOne = new google.maps.Marker({
-		position: algeria,
-		map: map,
-		title: "Algeria"
-	});
-    var markerTwo = new google.maps.Marker({
-		position: newYork,
-		map: map,
-		title: "New York"
-	});
-    var markerThree = new google.maps.Marker({
-		position: russia,
-		map: map,
-		title: "Russia"
-	});
-	// Clicked zoom to position centered
-	markerOne.addListener("click", function() {
-		map.setZoom(7);
-		map.setCenter(markerOne.getPosition());
-	});
-    markerTwo.addListener("click", function() {
-		map.setZoom(7);
-		map.setCenter(markerTwo.getPosition());
-	});
-    markerThree.addListener("click", function() {
-		map.setZoom(7);
-		map.setCenter(markerThree.getPosition());
-	});
-	// show lat & lng where clicked on map in console
-	map.addListener("click", function(event) {
-		console.log(event);
-		console.log(event.latLng.lat());
-		console.log(event.latLng.lng());
-	});
-	
-}
->>>>>>> 8d48c40dc80f834e4073d1df783fe4a509985988
->>>>>>> 21e3907a5735de0d9d81736cd897317399909895
