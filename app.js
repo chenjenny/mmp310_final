@@ -3,7 +3,8 @@
 
 window.onload = function () {
 	//ip address of user location
-	var ipUrl = "https://ipapi.co/json";
+	var ipUrl = 
+		"https://ipapi.co/json";
 
 		
 	//	weather api by city id
@@ -141,6 +142,7 @@ $(document).ready(function() {
         });
     });
 });
+
 var map;
   var geoJSON;
   var request;
