@@ -1,5 +1,6 @@
 <!doctype html>
 <html>
+
 <head>
 	<title>MMP310 | Final ☁️ Weather API </title>
 	<meta charset="utf-8">
@@ -8,29 +9,14 @@
 </head>
 
 <body>
-
 	<!-- current weather   -->
 	<div class="split left">
 		<div class="centered">
-			<div class="container">
-				<div>
-					<!-- weather header section -->
-					<div class="weather-head">
-						<h1 id="location"> Display City, Display county</h1>
-						<div id="description" class="description">
-							<!-- Weather icon-->
-							<p class="desc">Display weather</p>
-						</div>
-						<div id="temperature">
-							<!-- Add temp. icon-->
-						</div>
-						<!-- weather body header -->
-						<button class="js-geolocation"> Use My Location</button>
-					</div>
-				</div>
-			</div>
+			<div id="weather"></div>
+			<button class="js-geolocation" style="display: none;">Use Your Location</button>
+
 		</div>
-    </div>
+	</div>
 	<!-- search weather   -->
 	<div class="split right">
 		<div class="centered">
@@ -62,8 +48,9 @@
 		</div>
 	</div>
 	<div id="map-canvas"></div>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8aijYtQK2Xi10pBTdg2IxiooDqVJrPrw"></script>
-        <script src="app.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8aijYtQK2Xi10pBTdg2IxiooDqVJrPrw"></script>
+	<script src="app.js"></script>
 </body>
-</html> 
+
+</html>
