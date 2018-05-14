@@ -1,45 +1,81 @@
 <!doctype html>
 <html>
-
 <head>
 	<title>MMP310 | Final ☁️ Weather API </title>
-	<!-- stylesheet -->
-	<link rel="stylesheet" href="css/style.css" type="text/css">
-	<!-- weather icons -->
-	<!-- Open Weather Map Icons Source-->
-	<!-- https://github.com/erikflowers/weather-icons	-->
-	<!-- https://erikflowers.github.io/weather-icons/api-list.html	-->
-<!--<link rel="stylesheet" type="text/css" href="css/weather-icons.min.css">-->
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css">
-	<meta charset="utf-8" />
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="style.css" rel="stylesheet">
 </head>
 
 <body>
-	<div class="info">
-		<!-- Time Navbar -->
-		<nav class="navbar">
-			<h1><span id="date">00:00AM  May 6, 2018</span></h1>
-		</nav>
-		<!-- weather section  -->
-		<div class="container">
+
+	<!-- current weather   -->
+	<div class="split left">
+		<div class="centered">
+			<div class="container">
 				<div>
 					<!-- weather header section -->
 					<div class="weather-head">
 						<h1 id="location"> Display City, Display county</h1>
-							<div id="description" class="description">
-								<!-- Weather icon-->
-								<i id="icon-desc" class="wi wi-owm-200"></i>
-								<p class="desc">Display weather</p>
-							</div>
-							<div id="temperature">
-								<i id="icon-thermometer" class="wi wi-thermometer"></i>
-							</div>
-						<!-- weather body header -->
-						<div class="weather-body">
+						<div id="description" class="description">
+							<!-- Weather icon-->
+							<p class="desc">Display weather</p>
 						</div>
+						<div id="temperature">
+							<!-- Add temp. icon-->
+						</div>
+						<!-- weather body header -->
+						<button class="js-geolocation"> Use My Location</button>
+
+
 					</div>
 				</div>
+			</div>
 		</div>
+<<<<<<< HEAD
+	</div>
+
+	<!-- search weather   -->
+	<div class="split right">
+		<div class="centered">
+			<div id="containerSubCur">
+				<input class="city" type="text" placeholder="County/City Name">
+				<button class="submit">Submit</button>
+				<input class="city" type="text" placeholder="Enter Zipcode">
+				<button class="zipcode">Submit</button>
+				<div id="startWidget" class="card">
+					<div>
+						<img class="image-weather" src="" alt="" width="50" height="50" />
+					</div>
+					<div class="city-name">
+						<h2 class="card-title"></h2>
+					</div>
+					<div id="infoWidget">
+						<p class="description-weather"></p>
+						<p>
+							<strong>Temperture: </strong><span class="temp-weather"></span><br />
+							<strong>Max: </strong><span class="temp-max-weather"></span>
+							<strong>Min: </strong><span class="temp-min-weather"></span>
+						</p>
+						<p><strong>Wind: </strong><span class="wind-speed"></span></p>
+						<p><strong>Sunrise: </strong><span class="sys-sunrise"></span></p>
+						<p><strong>Sunset: </strong><span class="sys-sunset"></span></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="map-canvas"></div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8aijYtQK2Xi10pBTdg2IxiooDqVJrPrw&callback=initMap"></script>
+	<script src="app.js"></script>
+</body>
+</html> 
+
+	
+
+=======
     </div>
     
         <div id="containerSubCur">
@@ -73,3 +109,4 @@
         <script src="app.js"></script>
     </body>
 </html>
+>>>>>>> 8d48c40dc80f834e4073d1df783fe4a509985988
