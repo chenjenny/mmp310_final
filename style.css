@@ -1,54 +1,91 @@
-body {
-	background-color: ghostwhite;
-	margin: 0 auto;
-	color: black;
+@import url('https://fonts.googleapis.com/css?family=Dosis|Roboto');
+
+@media ( max-width: 800px) {
+	.digital {
+		text-align: left;
+		font-size: 2rem;
+	}
 }
 
-.split {
-    height: 100%;
-    width: 50%;
-/*    position: fixed;*/
-    z-index: 1;
-    top: 0;
-    overflow-x: hidden;
-    padding-top: 20px;
+.digital {
+	text-align: right;
+	padding: 10px;
+
 }
+
+.box {
+	font-family: 'Roboto', sans-serif;
+	text-align: left;
+	font-size: 2rem;
+	letter-spacing: 3px;
+	font-weight: 200;
+	padding: 10px;
+	border: 2px solid;
+
+}
+
+
+.split {
+	height: 100%;
+	width: 50%;
+	/*    position: fixed;*/
+	z-index: 1;
+	top: 0;
+	overflow-x: hidden;
+	padding-top: 20px;
+}
+
 .left {
-    float: left;
-    left: 0;
-    background-color: pink;
+	float: left;
+	left: 0;
+	background-color: pink;
 }
 
 .right {
-    float: right;
-    right: 0;
-    background-color: lightskyblue;
+	float: right;
+	right: 0;
+	background-color: lightskyblue;
 }
-.split.right{
-    position: relative;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-.split.left{
-    position: relative;
+
+.split.right {
+	position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
-.centered img {
-    width: 150px;
-    border-radius: 50%;
+.split.left {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* weather info*/
+
+.city {
+	font-family: 'Dosis', sans-serif;
+	display: inline-block;
+	margin-top: 0.5em;
+	border: none;
+	outline: none;
+	width: 50%;
+	padding: 10px;
+	border-bottom: solid 1px #FFF;
+	background-color: inherit;
+	color: #FFF;
+	font-size: 2em;
 }
 
 /* stye for icon */
+
 #icon-desc {
 	font-size: 5rem;
 	padding-top: 2rem;
 }
 
 /* weather display*/
+
 #description {
 	font-size: 2rem;
 }
@@ -60,24 +97,32 @@ body {
 #icon-thermometer {
 	font-size: 4rem;
 }
+
 #map-canvas {
 	height: 500px;
 	width: 100%;
 }
-html, body{
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
+
+#description-weather {
+	font-size: 14px;
 }
+
+html,
+body {
+	/*	background-color: #1f567c;*/
+	font-family: 'Roboto', sans-serif;
+	text-align: center;
+	font-weight: 200;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
 #map-canvas {
-  width: 100%;
-  height: 100%;
+	width: 100%;
+	height: 100%;
 }
+
 .gm-style-iw {
-  text-align: center;
-<<<<<<< HEAD
-}
-=======
-}
->>>>>>> 0664a7225686f851bd49ac8577184b530a1ea454
+	text-align: center;
