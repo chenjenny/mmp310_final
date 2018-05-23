@@ -13,9 +13,12 @@
 		<div id="date" class="digital">
 		</div>
 		<div class="date">
-			<div id="day"></div>
-			<div id="daymonth"></div>
-			<div id="year"></div>
+			<div id="day">
+			</div>
+			<div id="daymonth">
+			</div>
+			<div id="year">
+			</div>
 		</div>
 	</div>
 
@@ -34,15 +37,17 @@
 					fjs.parentNode.insertBefore(js, fjs);
 				}
 			}(document, 'script', 'weatherwidget-io-js');
-
 		</script>
 	</div>
 	<div class="split left">
-		<input class="city" type="text" placeholder="County/City Name">
-		<button class="submit">Submit</button>
-		
-		<input class="city" type="text" placeholder="Enter Zipcode">
-		<button class="zipcode">Submit</button>
+		<div id="city1">
+			<input class="city" type="text" placeholder="County/City Name">
+			<button class="submit">Submit</button>
+		</div>
+		<div id="zip1">
+			<input class="zip" type="text" placeholder="Enter Zipcode">
+			<button class="zipcode">Submit</button>
+		</div>
 	</div>
 
 
@@ -79,6 +84,7 @@
 			</div>
 		</div>
 	</div>
+	<br>
 	<div id="map-canvas"></div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8aijYtQK2Xi10pBTdg2IxiooDqVJrPrw"></script>

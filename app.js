@@ -26,22 +26,22 @@ function getDate() {
 getDate();
 
 var date = new Date(),
-    year = date.getFullYear(),
-    month = date.getMonth(),
-    day = date.getUTCDate(),
-    days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-    months = ["January", "February", "March", "April", "May", "June", "July", "Augast", "September", "October", "Novamber", "December"];
+	year = date.getFullYear(),
+	month = date.getMonth(),
+	day = date.getUTCDate(),
+	days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+	months = ["January", "February", "March", "April", "May", "June", "July", "Augast", "September", "October", "Novamber", "December"];
 
-document.getElementById('daymonth').innerHTML = months[month] + " " +day + " ";
+document.getElementById('daymonth').innerHTML = months[month] + " " + day + " ";
 document.getElementById('year').innerHTML = year;
 
 function time() {
-  var d = new Date(),
-      s = d.getSeconds() * 6,
-      m = d.getMinutes() * 6 + (s / 60),
-      h = d.getHours() % 12 / 12 * 360 + (m / 12);
-  
-  document.getElementById('day').innerHTML = days[d.getDay()] + ", ";
+	var d = new Date(),
+		s = d.getSeconds() * 6,
+		m = d.getMinutes() * 6 + (s / 60),
+		h = d.getHours() % 12 / 12 * 360 + (m / 12);
+
+	document.getElementById('day').innerHTML = days[d.getDay()] + ", ";
 }
 time();
 
@@ -55,6 +55,51 @@ $(document).ready(function () {
 		var apiKey = '27659eba6e7ec121ab63b30de42a931a';
 		var units = '&units=imperial';
 		var baseUrl = 'http://api.openweathermap.org/data/2.5/weather?APPID=' + apiKey + units;
+
+		$(".zip").click(function () {
+			var zipValue = $('.zip').val();
+			var round = {
+				url: baseUrl + '&zip=' + zipValue,
+				method: 'GET'
+			};
+
+			$.getJSON(params).done(function (response) {
+
+				// Show card
+				$('.weather').show();
+
+				// Title
+				$('.weather-title').text(response.name);
+
+				// Images
+				var image = response.weather[0].icon;
+				$('.image-weather').attr('src', 'http://openweathermap.org/img/w/' + image + '.png');
+				$('.image-weather').attr('alt', response.name);
+
+				// Description
+				$('.description-weather').text(response.weather[0].description);
+
+				// Temperature
+				var temp = Math.round(response.main.temp) + ' °F';
+				var tempMax = Math.round(response.main.temp_max) + ' °F';
+				var tempMin = Math.round(response.main.temp_min) + ' °F';
+
+				$('.temp-weather').text(temp);
+				$('.temp-max-weather').text(tempMax);
+				$('.temp-min-weather').text(tempMin);
+
+				// Wind
+				var wind = Math.round(response.wind.speed) + ' MPH';
+				$('.wind-speed').text(wind);
+
+				// Sunrise and Sunset
+				var sunrise = new Date(1000 * response.sys.sunrise);
+				$('.sys-sunrise').text(sunrise);
+				var sunset = new Date(1000 * response.sys.sunset);
+				$('.sys-sunset').text(sunset);
+			});
+
+		});
 
 		$(".submit").click(function () {
 
@@ -102,6 +147,7 @@ $(document).ready(function () {
 			});
 
 			//For zip code
+
 
 		});
 	});
@@ -191,6 +237,7 @@ var getWeather = function (northLat, eastLng, southLat, westLng) {
 	request.open("get", requestString, true);
 	request.send();
 };
+
 // Take the JSON results and proccess them
 var proccessResults = function () {
 	console.log(this);
@@ -204,6 +251,7 @@ var proccessResults = function () {
 	}
 };
 var infowindow = new google.maps.InfoWindow();
+
 // For each result that comes back, convert the data to geoJSON
 var jsonToGeoJson = function (weatherItem) {
 	var feature = {
@@ -237,9 +285,11 @@ var jsonToGeoJson = function (weatherItem) {
 			}
 		};
 	});
+
 	// returns object
 	return feature;
 };
+
 // Add the markers to the map
 var drawIcons = function (weather) {
 	map.data.addGeoJson(geoJSON);

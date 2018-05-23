@@ -38,13 +38,13 @@
 .left {
 	float: left;
 	left: 0;
-	background-color: pink;
+	background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
 }
 
 .right {
 	float: right;
 	right: 0;
-	background-color: lightskyblue;
+	background-color: #ccf2ff;
 }
 
 .split.right {
@@ -65,7 +65,24 @@
 
 .city {
 	font-family: 'Dosis', sans-serif;
-	display: inline-block;
+	/*	display: inline-block;*/
+	margin-top: 0.5em;
+	margin-bottom: 1em;
+	border: none;
+	outline: none;
+	width: 50%;
+	padding: 10px;
+	border-bottom: solid 1px #FFF;
+	background-color: inherit;
+	color: #1E90FF;
+	font-size: 2em;
+}
+
+.zip {
+	font-family: 'Dosis', sans-serif;
+	/*	display: inline-block;*/
+	margin-bottom: 1em;
+
 	margin-top: 0.5em;
 	border: none;
 	outline: none;
@@ -73,9 +90,20 @@
 	padding: 10px;
 	border-bottom: solid 1px #FFF;
 	background-color: inherit;
-	color: #FFF;
+	color: #1E90FF;
 	font-size: 2em;
 }
+
+body {
+	background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
+
+}
+
+#city1,
+#zip1 {
+	margin 2em;
+}
+
 
 /* stye for icon */
 
@@ -107,6 +135,7 @@
 	font-size: 14px;
 }
 
+
 html,
 body {
 	/*	background-color: #1f567c;*/
@@ -126,3 +155,4 @@ body {
 
 .gm-style-iw {
 	text-align: center;
+}
